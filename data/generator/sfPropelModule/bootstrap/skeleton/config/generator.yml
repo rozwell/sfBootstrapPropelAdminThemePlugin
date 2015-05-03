@@ -5,15 +5,9 @@ generator:
 
     config:
       actions:              ~
-
       fields:               ~
-
       list:                 ~
-
       filter:               ~
-
       form:                 ~
-
       new:                  ~
-
       edit:                 ~
