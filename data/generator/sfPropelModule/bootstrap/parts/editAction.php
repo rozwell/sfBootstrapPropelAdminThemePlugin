@@ -12,4 +12,5 @@
 
         $this->form = $this->configuration->getForm($this-><?php echo $this->getSingularName() ?>);
         <?php echo isset($this->params['disable_form_customization']) && $this->params['disable_form_customization'] ? '' : $this->getFormCustomization('edit'); ?>
+
     }

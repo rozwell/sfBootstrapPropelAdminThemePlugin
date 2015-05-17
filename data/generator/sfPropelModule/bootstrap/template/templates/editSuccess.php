@@ -3,11 +3,11 @@
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
 [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('class' => 'form-horizontal', 'role' => 'form')) ?]
-    <div class="row">
+    <div class="row form-actions-top">
         <div class="col-lg-12">
-            <h1 class="pull-left">[?php echo <?php echo $this->getI18NString('edit.title') ?> ?]</h1>
+            [?php include_partial('<?php echo $this->getModuleName() ?>/edit_title', array('helper' => $helper, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)); ?]
             <div class="pull-right">
-                [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
+                [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions_top', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
             </div>
         </div>
     </div>
@@ -18,10 +18,10 @@
 
     [?php include_partial('<?php echo $this->getModuleName() ?>/form', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
 
-    <div class="row">
+    <div class="row form-actions-bottom">
         <div class="col-lg-12">
             <div class="pull-right">
-                [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
+                [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions_bottom', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
             </div>
         </div>
     </div>

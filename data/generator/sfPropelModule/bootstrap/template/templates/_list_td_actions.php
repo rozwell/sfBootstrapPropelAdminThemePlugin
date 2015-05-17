@@ -1,4 +1,4 @@
-<td class="text-right">
+<td class="text-right sf-list-td-actions">
     <div class="hidden-xs hidden-sm">
         <?php foreach ($this->configuration->getValue('list.object_actions') as $name => $params): ?>
             <?php if ('_delete' == $name): ?>
@@ -15,7 +15,7 @@
         <?php endforeach; ?>
     </div>
     <div class="hidden-md hidden-lg">
-        <div class="dropdown navbar-right">
+        <div class="dropdown pull-right">
             <a class="btn btn-default btn-xs" data-toggle="dropdown">
                 [?php echo __('Actions', array(), 'sf_admin') ?] <span class="caret"></span>
             </a>

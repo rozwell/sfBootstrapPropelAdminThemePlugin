@@ -8,7 +8,7 @@
 [?php endif; ?]
 
 <div class="panel panel-default">
-    <div class="panel-heading">[?php echo __('Filter', array(), 'sf_admin') ?]</div>
+    <div class="panel-heading">[?php echo __('Filters', array(), 'sf_admin') ?]</div>
     <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter')) ?]" class="form-horizontal filter" role="form" method="post">
         [?php echo $form->renderHiddenFields() ?]
 
@@ -44,8 +44,8 @@
         </div>
 
         <div class="panel-footer text-right">
+            [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' => 'btn btn-link btn-xs reset-filters')) ?]
             <button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-filter"></i> [?php echo __('Filter', array(), 'sf_admin') ?]</button>
-            [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' => 'btn btn-link btn-xs')) ?]
         </div>
     </form>
 </div>

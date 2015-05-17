@@ -1,5 +1,5 @@
 [?php if (!$pager->getNbResults()): ?]
-<div class="alert alert-warning">[?php echo __('No result', array(), 'sf_admin') ?]</div>
+<div class="alert alert-warning no-results">[?php echo __('No result', array(), 'sf_admin') ?]</div>
 [?php else: ?]
 <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover">

@@ -8,4 +8,5 @@
         $this->getResponse()->setTitle( <?php echo $this->getI18NString('new.title') ?>);
 
         <?php echo isset($this->params['disable_form_customization']) && $this->params['disable_form_customization'] ? '' : $this->getFormCustomization('new'); ?>
+
     }

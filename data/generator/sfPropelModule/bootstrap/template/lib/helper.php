@@ -17,7 +17,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
     public function linkToMoveUp($object, $params)
     {
         if ($object->isFirst()) {
-            return '<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-chevron-up"></i> ' . __($params['label'], array(), 'sf_admin') . '</a>';
+            return '<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-arrow-up"></i> ' . __($params['label'], array(), 'sf_admin') . '</a>';
         }
 
         if (empty($params['action'])) {
@@ -30,13 +30,13 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             $class = 'btn btn-default btn-xs';
         }
 
-        return link_to('<i class="fa fa-chevron-up"></i> ' . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class));
+        return link_to('<i class="fa fa-arrow-up"></i> ' . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class.' sf-move-up'));
     }
 
     public function linkToMoveDown($object, $params)
     {
         if ($object->isLast()) {
-            return '<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-chevron-down"></i> ' . __($params['label'], array(), 'sf_admin') . '</a>';
+            return '<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-arrow-down"></i> ' . __($params['label'], array(), 'sf_admin') . '</a>';
         }
 
         if (empty($params['action'])) {
@@ -49,7 +49,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             $class = 'btn btn-default btn-xs';
         }
 
-        return link_to('<i class="fa fa-chevron-down"></i> ' . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class));
+        return link_to('<i class="fa fa-arrow-down"></i> ' . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class.' sf-move-down'));
     }
 
     public function linkToNew($params)
@@ -65,7 +65,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             $class = 'btn btn-primary btn-xs';
         }
 
-        return link_to('<i class="fa fa-pencil"></i> ' . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class));
+        return link_to('<i class="fa fa-pencil"></i> ' . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $class.' sf-edit'));
     }
 
     public function linkToSave($object, $params)
@@ -81,7 +81,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
     public function linkToSaveAndAdd($object, $params)
     {
         if (!$object->isNew()) {
-            return '';
+            //return '';
         }
 
         return '<button type="submit" class="btn btn-success" name="_save_and_add"><i class="fa fa-save"></i> ' . __($params['label'], array(), 'sf_admin') . '</button>';
@@ -93,7 +93,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             return '';
         }
 
-        return link_to('<i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">' . __($params['label'], array(), 'sf_admin') . '</span>', $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'title' => __($params['label'], array(), 'sf_admin'), 'class' => 'btn btn-danger', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm']));
+        return link_to('<i class="fa fa-trash-o"></i> <span class="hidden-xs hidden-sm">' . __($params['label'], array(), 'sf_admin') . '</span>', $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'title' => __($params['label'], array(), 'sf_admin'), 'class' => 'btn btn-danger sf-delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : ''));
     }
 
     public function linkToListDelete($object, $params)
@@ -108,12 +108,13 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             $class = 'btn btn-danger btn-xs';
         }
 
-        return link_to('<i class="fa fa-trash-o"></i> ' . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'title' => __($params['label'], array(), 'sf_admin'), 'class' => $class, 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm']));
+        return link_to('<i class="fa fa-trash-o"></i> ' . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'title' => __($params['label'], array(), 'sf_admin'), 'class' => $class.' sf-list-delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : ''));
     }
 
     public function linkToAction($params)
     {
-        $action = '@<?php echo $this->params['route_prefix']; ?>_collection?action=' . (isset($params['action']) ?  $params['action'] : sfInflector::camelize($params['label']));
+        //$action = '@<?php echo $this->params['route_prefix']; ?>?action=' . (isset($params['action']) ?  $params['action'] : sfInflector::camelize($params['label']));
+        $action = '<?php echo $this->params['route_prefix']; ?>/' . (isset($params['action']) ?  $params['action'] : sfInflector::camelize($params['label']));
 
         $link_params = $params['params'];
 
@@ -136,7 +137,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
             $link_params['class'] = 'btn-xs';
         }
 
-        return link_to((isset($link_params['icon_class']) ? '<i class="' . $link_params['icon_class'] . '"></i> ' : '') . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => $link_params['class']));
+        return link_to((isset($link_params['icon_class']) ? '<i class="' . $link_params['icon_class'] . '"></i> ' : '') . __($params['label'], array(), 'sf_admin'), '<?php echo $this->params['moduleName'] ?>/' . $params['action'] . '?<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => '<?php echo $this->params['moduleName'] ?> '.$params['action'].' '.$link_params['class'], 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : ''));
     }
 
     public function linkToPrevious($object, $params)

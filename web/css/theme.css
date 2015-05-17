@@ -4,6 +4,10 @@
     top: auto;
 }
 
+body #sfWebDebug .sfWebDebugTop {
+    width: 100%;
+}
+
 /* Pagination in list */
 tfoot .pagination {
     margin: 0;
@@ -11,8 +15,9 @@ tfoot .pagination {
 
 /* Filter label to the left */
 .filter.form-horizontal .control-label {
-    text-align: left;
+    text-align: right;
     padding-left: 0 !important;
+    width: auto;
 }
 
 .filter.form-horizontal .form-group {
@@ -22,6 +27,10 @@ tfoot .pagination {
 
 .filter.form-horizontal .col-sm-8 {
     padding-left: 0 !important;
+}
+
+.filter.form-horizontal .panel-body {
+    padding-bottom: 0;
 }
 
 .input-inline {
@@ -49,7 +58,7 @@ tfoot .pagination {
 }
 
 /* Page title */
-.main h1.pull-left {
+h1.pull-left {
     margin-top: 0;
 }
 
@@ -57,7 +66,25 @@ body {
     padding-top: 70px;
 }
 
-.pagination-sm>li>a, .pagination-sm>li>span {
+.pagination-sm > li > a, .pagination-sm > li > span {
     padding: 1px 10px;
     font-size: 12px;
+}
+
+.list-top,
+.form-actions-top {
+    margin-top: 20px;
+}
+
+.form-control-feedback {
+    line-height: 34px;
+}
+
+.sf-flashes .fa {
+    font-size: 20px;
+    vertical-align : text-bottom;
+}
+
+.alert.no-results {
+    margin: 10px 0 20px;
 }

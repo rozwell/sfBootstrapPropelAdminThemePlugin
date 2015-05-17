@@ -22,7 +22,7 @@ var form_changed = false;
 
 window.onbeforeunload = function(e) {
     if (form_changed) {
-        var message = "Sie haben die Änderungen noch nicht gespeichert!";
+        var message = "You have not saved your changes!";
 
         e = e || window.event;
 

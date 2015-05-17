@@ -57,6 +57,11 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorConfigu
         <?php unset($this->config['list']['query_methods']) ?>
     }
 
+    public function hasMaxPerPages()
+    {
+        return <?php echo isset($this->config['list']['max_per_pages']) && empty($this->config['list']['max_per_pages']) ? 'false' : 'true' ?>;
+    }
+
     public function getMaxPerPages()
     {
         $defaults = sfConfig::get('sf_sfBootstrapPropelAdminTheme_max_per_pages');
