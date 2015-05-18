@@ -2,7 +2,7 @@
 <div class="alert alert-warning no-results">[?php echo __('No result', array(), 'sf_admin') ?]</div>
 [?php else: ?]
 <div class="table-responsive">
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover table-condensed">
         <thead>
             <tr>
                 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
