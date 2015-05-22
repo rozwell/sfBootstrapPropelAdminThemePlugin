@@ -7,7 +7,7 @@
     </div>
 [?php endif; ?]
 
-<div class="panel panel-default">
+<div class="panel panel-default filter-panel">
     <div class="panel-heading">[?php echo __('Filters', array(), 'sf_admin') ?]</div>
     <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter')) ?]" class="form-horizontal filter" role="form" method="post">
         [?php echo $form->renderHiddenFields() ?]

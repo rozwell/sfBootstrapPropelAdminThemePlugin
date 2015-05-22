@@ -20,6 +20,14 @@ table tr.row-pagination .pull-right {
     line-height: 0.5;
 }
 
+.filter-panel .panel-footer,
+.filter-panel .panel-heading {
+    padding: 5px 10px;
+}
+.filter-panel .panel-body {
+    padding: 10px;
+}
+
 /* Filter label to the left */
 .filter.form-horizontal .control-label {
     text-align: right;
