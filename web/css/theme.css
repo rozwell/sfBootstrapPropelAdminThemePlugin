@@ -16,6 +16,9 @@ tfoot .pagination {
 table tr.row-pagination th {
     border-bottom: none;
 }
+table tr.row-pagination .pull-right {
+    line-height: 0.5;
+}
 
 /* Filter label to the left */
 .filter.form-horizontal .control-label {
