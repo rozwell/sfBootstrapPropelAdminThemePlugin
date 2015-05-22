@@ -9,8 +9,12 @@ body #sfWebDebug .sfWebDebugTop {
 }
 
 /* Pagination in list */
+thead .pagination,
 tfoot .pagination {
     margin: 0;
+}
+table tr.row-pagination th {
+    border-bottom: none;
 }
 
 /* Filter label to the left */
