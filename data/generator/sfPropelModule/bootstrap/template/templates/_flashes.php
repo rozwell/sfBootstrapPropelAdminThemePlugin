@@ -1,5 +1,11 @@
 [?php if ($sf_user->hasFlash('notice') || $sf_user->hasFlash('info') || $sf_user->hasFlash('warning') || $sf_user->hasFlash('error')): ?]
     <div class="sf-flashes">
+        [?php if ($sf_user->hasFlash('success')): ?]
+            <div class="alert alert-success">
+                <i class="fa fa-check-circle"></i> [?php echo __($sf_user->getFlash('success'), array(), 'sf_admin') ?]
+            </div>
+        [?php endif; ?]
+
         [?php if ($sf_user->hasFlash('notice')): ?]
             <div class="alert alert-success">
                 <i class="fa fa-check-circle"></i> [?php echo __($sf_user->getFlash('notice'), array(), 'sf_admin') ?]
