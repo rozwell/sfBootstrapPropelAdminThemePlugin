@@ -2,7 +2,7 @@
 
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
-[?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('class' => 'form-horizontal', 'role' => 'form')) ?]
+[?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('class' => 'form-horizontal sf_admin_form', 'role' => 'form')) ?]
     <div class="row form-actions-top">
         <div class="col-lg-12">
             [?php include_partial('<?php echo $this->getModuleName() ?>/new_title', array('helper' => $helper)); ?]
