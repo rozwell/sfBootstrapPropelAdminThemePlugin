@@ -14,6 +14,8 @@ abstract class <?php echo $this->getGeneratedModuleName() ?>Actions extends <?ph
 {
     public function preExecute()
     {
+        parent::preExecute();
+
         $this->configuration = new <?php echo $this->getModuleName() ?>GeneratorConfiguration();
 
         if (!$this->getUser()->hasCredential($this->configuration->getCredentials($this->getActionName()))) {
