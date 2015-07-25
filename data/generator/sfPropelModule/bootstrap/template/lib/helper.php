@@ -143,7 +143,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
     public function linkToPrevious($object, $params)
     {
         if (!$object->isNew()) {
-            return link_to('<i class="fa fa-arrow-left"></i>', '@<?php echo $this->getUrlForAction('object') ?>?action=previous&id=' . $object->getPrimaryKey(), array('title' => __($params['label'], array(), 'sf_admin'), 'class' => 'previous_link btn btn-default'));
+            return link_to('<i class="fa fa-arrow-left"></i>', '@<?php echo $this->getUrlForAction('object') ?>?action=previous&<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => 'previous_link btn btn-default'));
         }
 
         return '';
@@ -152,7 +152,7 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorHelper 
     public function linkToNext($object, $params)
     {
         if (!$object->isNew()) {
-            return link_to('<i class="fa fa-arrow-right"></i>', '@<?php echo $this->getUrlForAction('object') ?>?action=next&id=' . $object->getPrimaryKey(), array('title' => __($params['label'], array(), 'sf_admin'), 'class' => 'next_link btn btn-default'));
+            return link_to('<i class="fa fa-arrow-right"></i>', '@<?php echo $this->getUrlForAction('object') ?>?action=next&<?php echo $this->getPrimaryKeyUrlParams('$object', true); ?>, array('title' => __($params['label'], array(), 'sf_admin'), 'class' => 'next_link btn btn-default'));
         }
 
         return '';
