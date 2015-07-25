@@ -16,9 +16,9 @@
             <?php echo $this->addCredentialCondition('[?php echo $helper->linkToSaveAndAdd($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
         <?php elseif ('_previous' == $name): ?>
             <div class="btn-group">
-                [?php echo $helper->linkToPrevious($form->getObject(), <?php echo $this->asPhp($params); ?>) ?]
+                [?php //echo $helper->linkToPrevious($form->getObject(), <?php echo $this->asPhp($params); ?>) ?]
         <?php elseif ('_next' == $name): ?>
-                [?php echo $helper->linkToNext($form->getObject(), <?php echo $this->asPhp($params); ?>) ?]
+                [?php //echo $helper->linkToNext($form->getObject(), <?php echo $this->asPhp($params); ?>) ?]
             </div>
         <?php else: ?>
             [?php if (method_exists($helper, 'linkTo<?php echo $method = ucfirst(sfInflector::camelize($name)); ?>')): ?]
