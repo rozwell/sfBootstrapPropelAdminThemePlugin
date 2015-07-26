@@ -3,7 +3,7 @@
 [?php elseif ($field->isComponent()): ?]
     [?php include_component('<?php echo $this->getModuleName() ?>', $name, array('form' => $form, 'attributes' => $attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes)); ?]
 [?php else: ?]
-    <div class="form-group[?php $form[$name]->hasError() and print ' has-error has-feedback'; ?]">
+    <div class="form-group [?php echo $form->getName().'_'.$name; $form[$name]->hasError() and print ' has-error has-feedback'; ?]">
         [?php echo $form[$name]->renderLabel($label, array('class' => 'col-sm-2 control-label')); ?]
 
         <div class="col-sm-6">
