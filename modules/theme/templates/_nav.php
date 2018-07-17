@@ -32,7 +32,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><?php echo link_to('<i class="fa fa-sign-out"></i> ' . __('Logout'), '@sf_guard_signout', 'confirm=' . __('Do you really want to logout?', array(), 'sf_admin')); ?></li>
+                    <li><?php echo link_to('<i class="fa fa-sign-out"></i> ' . __('Logout'), '@sf_guard_signout', 'confirm=' . __('Do you really want to logout?')); ?></li>
                 </ul>
             </div>
         </div>

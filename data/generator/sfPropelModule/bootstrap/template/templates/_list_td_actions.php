@@ -17,7 +17,7 @@
     <div class="hidden-md hidden-lg">
         <div class="dropdown pull-right">
             <a class="btn btn-default btn-xs" data-toggle="dropdown">
-                [?php echo __('Actions', array(), 'sf_admin') ?] <span class="caret"></span>
+                [?php echo __('Actions') ?] <span class="caret"></span>
             </a>
             <ul class="dropdown-menu text-left" role="menu">
                 <?php foreach ($this->configuration->getValue('list.object_actions') as $name => $params): ?>

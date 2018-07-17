@@ -1,6 +1,6 @@
 <?php if ($listActions = $this->configuration->getValue('list.batch_actions')): ?>
     <div class="form-group">
-        <label for="batch_action">[?php echo __('All chosen datasets', array(), 'sf_admin') ?]:</label>
+        <label for="batch_action">[?php echo __('All chosen datasets') ?]:</label>
         <select name="batch_action" class="form-control input-sm">
             <option value=""></option>
             <?php foreach ((array) $listActions as $action => $params): ?>
@@ -11,6 +11,6 @@
         [?php if ($form->isCSRFProtected()): ?]
             <input type="hidden" name="[?php echo $form->getCSRFFieldName() ?]" value="[?php echo $form->getCSRFToken() ?]" />
         [?php endif; ?]
-        <button type="submit" class="btn btn-default btn-sm">[?php echo __('OK', array(), 'sf_admin') ?]</button>
+        <button type="submit" class="btn btn-default btn-sm">[?php echo __('OK') ?]</button>
     </div>
 <?php endif; ?>

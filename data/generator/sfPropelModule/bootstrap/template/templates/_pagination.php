@@ -8,12 +8,12 @@
         </li>
     [?php else: ?]
         <li>
-            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=1" title="[?php echo __('First page', array(), 'sf_admin'); ?]">
+            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=1" title="[?php echo __('First page'); ?]">
                 <i class="fa fa-angle-double-left"></i>
             </a>
         </li>
         <li>
-            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getPreviousPage() ?]" title="[?php echo __('Previous page', array(), 'sf_admin'); ?]">
+            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getPreviousPage() ?]" title="[?php echo __('Previous page'); ?]">
                 <i class="fa fa-angle-left"></i>
             </a>
         </li>
@@ -26,7 +26,7 @@
             </li>
         [?php else: ?]
             <li>
-                <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $page ?]" title="[?php echo __('Page %1%', array('%1%' => $page), 'sf_admin'); ?]">
+                <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $page ?]" title="[?php echo __('Page %1%', array('%1%' => $page)); ?]">
                     [?php echo $page ?]
                 </a>
             </li>
@@ -42,12 +42,12 @@
         </li>
     [?php else: ?]
         <li>
-            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getNextPage() ?]" title="[?php echo __('Next page', array(), 'sf_admin'); ?]">
+            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getNextPage() ?]" title="[?php echo __('Next page'); ?]">
                 <i class="fa fa-angle-right"></i>
             </a>
         </li>
         <li>
-            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getLastPage() ?]" title="[?php echo __('Last page', array(), 'sf_admin'); ?]">
+            <a href="[?php echo url_for('@<?php echo $this->getUrlForAction('list') ?>') ?]?page=[?php echo $pager->getLastPage() ?]" title="[?php echo __('Last page'); ?]">
                 <i class="fa fa-angle-double-right"></i>
             </a>
         </li>
