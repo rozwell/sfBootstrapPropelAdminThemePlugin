@@ -5,7 +5,7 @@
 [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>', array('class' => 'form-horizontal sf_admin_form', 'role' => 'form')) ?]
     <div class="row form-actions-top">
         <div class="col-lg-12">
-            [?php include_partial('<?php echo $this->getModuleName() ?>/edit_title', array('helper' => $helper, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)); ?]
+            [?php include_partial('<?php echo $this->getModuleName() ?>/edit_title', array('helper' => $helper, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration)); ?]
             <div class="pull-right">
                 [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions_top', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
             </div>
