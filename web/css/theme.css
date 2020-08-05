@@ -97,7 +97,7 @@ body {
 
 .sf-flashes .fa {
     font-size: 20px;
-    vertical-align : text-bottom;
+    vertical-align: text-bottom;
 }
 
 .alert.no-results {
@@ -115,4 +115,8 @@ body {
 
 .sf-list-td-actions a:first-child {
     margin-bottom: 0px;
+}
+
+.sf-list-td-actions a.show {
+    display: inline-block !important;
 }
